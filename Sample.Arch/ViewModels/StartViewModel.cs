@@ -12,7 +12,11 @@ namespace Sample.Arch.ViewModels
             _sampleService = sampleService;
         }
 
-        public string MyName { get; set; }
+        string _myName;
+        public string MyName {
+            get { return _myName; }
+            set { _myName = value; RaisePropertyChanged(); }
+        }
 
         public void Init() {
             MyName = _sampleService.GetName();
