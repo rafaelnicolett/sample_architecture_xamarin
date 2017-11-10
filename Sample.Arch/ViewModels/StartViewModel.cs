@@ -8,17 +8,24 @@ namespace Sample.Arch.ViewModels
     {
         readonly ISampleService _sampleService;
 
-        public StartViewModel(ISampleService sampleService) {
+        public StartViewModel(ISampleService sampleService)
+        {
             _sampleService = sampleService;
         }
 
+        MvxCommand _gotoSecondViewModelCommand;
+        public MvxCommand GotoSecondViewModelCommand =>
+            _gotoSecondViewModelCommand = _gotoSecondViewModelCommand ?? new MvxCommand(() => ShowViewModel<SecondViewModel>());
+
         string _myName;
-        public string MyName {
+        public string MyName
+        {
             get { return _myName; }
             set { _myName = value; RaisePropertyChanged(); }
         }
 
-        public void Init() {
+        public void Init()
+        {
             MyName = _sampleService.GetName();
         }
     }

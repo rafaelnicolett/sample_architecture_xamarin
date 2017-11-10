@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Android.Content;
-using Android.Widget;
 using MvvmCross.Droid.Platform;
 using System.Reflection;
 using MvvmCross.Binding.Bindings.Target.Construction;
@@ -12,6 +11,8 @@ using MvvmCross.Platform;
 using MvvmCross.Platform.Droid.Platform;
 using MvvmCross.Platform.Platform;
 using SupportAndroid = Android.Support;
+using Sample.Arch.Services;
+using Sample.Arch.Droid.Services;
 
 namespace Sample.Arch.Droid
 {
@@ -34,11 +35,6 @@ namespace Sample.Arch.Droid
 
         protected override IEnumerable<Assembly> AndroidViewAssemblies => new List<Assembly>(base.AndroidViewAssemblies)
         {
-            //typeof(SupportAndroid.Design.Widget.CoordinatorLayout).Assembly,
-            //typeof(SupportAndroid.Design.Widget.AppBarLayout).Assembly,
-            //typeof(SupportAndroid.Design.Widget.CollapsingToolbarLayout).Assembly,
-            //typeof(SupportAndroid.Design.Widget.NavigationView).Assembly,
-            //typeof(SupportAndroid.Design.Widget.FloatingActionButton).Assembly,
             typeof(SupportAndroid.V7.Widget.Toolbar).Assembly,
             typeof(SupportAndroid.V4.Widget.DrawerLayout).Assembly,
             typeof(SupportAndroid.V4.View.ViewPager).Assembly,
@@ -93,6 +89,8 @@ namespace Sample.Arch.Droid
 
         protected override void InitializeFirstChance()
         {
+            Mvx.RegisterSingleton<ISampleNativeService>(new SampleNativeService());
+
             base.InitializeFirstChance();
         }
     }

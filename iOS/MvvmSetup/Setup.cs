@@ -3,6 +3,9 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
 using UIKit;
+using MvvmCross.Platform;
+using Sample.Arch.Services;
+using Sample.Arch.iOS.Services;
 
 namespace Sample.Arch.iOS.MvvmSetup
 {
@@ -30,6 +33,8 @@ namespace Sample.Arch.iOS.MvvmSetup
 
         protected override void InitializeFirstChance()
         {
+            Mvx.RegisterSingleton<ISampleNativeService>(new SampleNativeService());
+
             base.InitializeFirstChance();
 
         }

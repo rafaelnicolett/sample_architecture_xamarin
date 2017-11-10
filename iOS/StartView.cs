@@ -25,6 +25,7 @@ namespace Sample.Arch.iOS
 
             binding.Bind(lblName).For(x => x.Text).To(x => x.MyName);
             binding.Bind(txtName).For(x => x.Text).To(x => x.MyName);
+            binding.Bind(btnGotoSecondView).For("TouchUpInside").To(x => x.GotoSecondViewModelCommand);
 
             binding.Apply();
         }

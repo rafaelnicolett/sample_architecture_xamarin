@@ -14,4 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         local:MvxBind="Text MyName" />
+
+  <Button
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       local:MvxBind="Click GotoSecondViewModelCommand"
+       android:text="@string/hello" />
 </LinearLayout>

@@ -7,15 +7,22 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
 namespace Sample.Arch.iOS
 {
-    [Register ("MyViewController")]
-    partial class MyViewController
+    [Register ("SecondView")]
+    partial class SecondView
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblNameDevice { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (lblNameDevice != null) {
+                lblNameDevice.Dispose ();
+                lblNameDevice = null;
+            }
         }
     }
 }

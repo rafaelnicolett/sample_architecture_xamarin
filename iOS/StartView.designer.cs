@@ -1,4 +1,4 @@
-// WARNING
+﻿// WARNING
 //
 // This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
@@ -16,6 +16,10 @@ namespace Sample.Arch.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnGotoSecondView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblName { get; set; }
 
         [Outlet]
@@ -24,6 +28,11 @@ namespace Sample.Arch.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnGotoSecondView != null) {
+                btnGotoSecondView.Dispose ();
+                btnGotoSecondView = null;
+            }
+
             if (lblName != null) {
                 lblName.Dispose ();
                 lblName = null;

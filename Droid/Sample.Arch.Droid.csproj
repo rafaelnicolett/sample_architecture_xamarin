@@ -149,6 +149,8 @@
     <Compile Include="MvvmSetup\Setup.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecondView.cs" />
+    <Compile Include="Services\SampleNativeService.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="StartView.cs" />
   </ItemGroup>
@@ -161,6 +163,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\splash_screen.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\second_view.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
